@@ -11,10 +11,13 @@ class Lawnmower:
         blade_adjust = float(input("How would you like to adjust the blade? (negative goes down)"))
         self.blade_height = self.blade_height + blade_adjust
 
-    def gasoline_refill(self):
-        gas = str.lower(input("Would you like to refill your gas? "))
-        if gas == "yes":
+    def gasoline_refill(self, refill_amount):
+        if self.gasoline + refill_amount >= 100:
+            print("Overflown!\nGas Full")
             self.gasoline = 100
+        elif self.gasoline + refill_amount < 100:
+            self.gasoline = self.gasoline + refill_amount
+            print(f"Gas at {self.gasoline}%")
 
     def lawnmower_stats(self):
         print(f"Lawnmower started: {self.running}")
@@ -25,7 +28,7 @@ class Lawnmower:
 
 def main():
     lawnmower_one = Lawnmower(60,False,0.5)
-    lawnmower_one.gasoline_refill()
+    lawnmower_one.gasoline_refill(30)
     lawnmower_one.start_lawnmower()
     lawnmower_one.adjust_blade()
     lawnmower_one.lawnmower_stats()

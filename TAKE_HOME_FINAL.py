@@ -70,6 +70,12 @@ class Plant:
                 Fern(self.hunger, self.evo, self.water).stat_check()
             self.end = True
 
+    def __eq__(self, other):
+        return self == other
+    
+    def __add__(self, other):
+        return self + other
+
 
 class Fern(Plant):
     def __init__(self, hunger, evo, water):
@@ -150,7 +156,7 @@ class Tree(Plant):
             print("Tree dried out")
             self.end = True
         if self.hunger > 100:
-            print("BIG BOY")
+            print("oh...")
             self.end = True
         elif self.evo >= 100:
             print("Tree Transformed")
@@ -189,8 +195,7 @@ def main():
         plant.menu()
         plant.stat_check()
 
-        if repr(plant) == "True":
-            print("ending supposed")
+        if repr(plant).__eq__("True"):
             end = True
     
 main()

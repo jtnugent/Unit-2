@@ -104,7 +104,7 @@ class Fern(Plant):
             self.end = True
 
     def reset(self):
-        self.hunger = self.hunger-10
+        self.hunger = self.hunger-40
         self.water = self.water-40
         self.evo = self.evo+20
 
@@ -135,7 +135,7 @@ class Succulent(Plant):
             self.end = True
 
     def reset(self):
-        self.hunger = self.hunger-10
+        self.hunger = self.hunger-40
         self.water = self.water-10
         self.evo = self.evo+30
             
@@ -172,22 +172,6 @@ class Tree(Plant):
 
 def main():
 
-    print(""" 
-                                  
-                            
-                             
-                              
-                            
-                              
-                           
-                              
-           |       -|      
-             Q-| |-P    
-        |---------------|                                     
-        |               |                            
-        |               |          |        |          |-------------------|                                 
-        _________________          |________|          |___________________|      
-""")
     plant_choice = str.lower(input("Would you like to choose a Fern, Tree, or Succulent?\n"))
     plant = Plant(plant_choice, 50, 50, 2, 50)
     end = False

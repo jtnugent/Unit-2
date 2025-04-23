@@ -10,10 +10,10 @@ class Restaurant:
         self.cuisine_type = cuisine_type
 
     def describe_restaurant(self) -> None:
-            print(f"Restaurant is named {self.restaurant_name} and serves {self.cuisine_type} food.")
+            print(f"Restaurant name: {self.restaurant_name}\nRestaurant cuisine: {self.cuisine_type}")
 
     def open_restaurant(self) -> None:
-            print("Restaurant is open!")
+            print(f"{self.restaurant_name} is open")
 
 
 
@@ -23,10 +23,10 @@ class User:
         self.last_name = last_name
 
     def describe_user(self) -> None:
-        print(f"Name is {self.first_name} {self.last_name}")
+        print(f"First Name: {self.first_name} {self.last_name}")
 
     def greet_user(self) -> None:
-        print(f"Hello {self.first_name} {self.last_name}!")    
+        print(f"Welcome {self.first_name}!")    
 
 def main():
     restaurant_one = Restaurant("Foodie","Fast")
